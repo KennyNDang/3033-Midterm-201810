@@ -6,7 +6,7 @@ This project is meant to be individual.  Feel free to discuss with your colleagu
 
 ## Description
 
-The Grade Calculator application will be used to calculate student&#39;s grades for a single course.  A course will be comprised of the same 5 areas for grades:
+The Grade Calculator application will be used to calculate student's grades for a single course.  A course will be comprised of the same 5 areas for grades:
 
 1. Homework
 2. Quiz
@@ -27,18 +27,18 @@ The business partners who have hired you to create the application have required
   - Final grades
 - Provide a student id and get that students averages for each area back and their final grade
 - Provide a course number and get back a list of all the students in the course in descending order of their student id with their final grade as a percent and as a letter grade
-  - A – \&gt;= 89%
-  - B – 89% \&gt; and  \&gt;= 79%
-  - C – 79% \&gt; and  \&gt;= 69%
-  - D – 69% \&gt; and  \&gt;= 59%
-  - F – \&lt; 59%
+  - A – >= 90%
+  - B – < 90 AND >= 80%
+  - C – < 80% AND >= 70%
+  - D – < 70% AND >= 60%
+  - F – < 59%
 
 The application will be getting all of the data needed for the application through what is commonly coined &quot;Flat Files&quot; in the industry (files that live on your computer and not through a database, in our case we will have them be text files (\*.txt)). The client has requested that the path to the files be placed in a constant in the class that has your main method so that if they need to, they can change it easily in the future.
 
 ### File format requirements
 
 - course.txt
-  - The course file will have the course number and the instructor&#39;s name separated by a comma &quot;,&quot;
+  - The course file will have the course number and the instructor's name separated by a comma ","
   - The course file will have the percent for each part of the grade.
     - Homework: 20%
     - Quiz: 25%
