@@ -15,7 +15,7 @@ namespace GradeCalculator
 
             Course mis3033 = ProcessCourseFile(courseLines);
 
-            Console.WriteLine($"{mis3033.CourseName} is taught by {mis3033.Instructor}");
+            Console.WriteLine($"{mis3033}");
             Console.ReadKey();
         }
 
@@ -27,11 +27,40 @@ namespace GradeCalculator
             newCourse.CourseName = firstLineParts[0].Trim();
             newCourse.Instructor = firstLineParts[1].Trim();
 
-            
-            //foreach (var line in firstLineParts)
-            //{
-            //    Console.WriteLine(line);
-            //}
+            for (int i = 1; i < courseLines.Length; i++)
+            {
+                string line = courseLines[i].Trim();
+
+                if (line != string.Empty)
+                {
+                    var lineParts = line.Split(':');  // Separate the line so we have Homework/Quiz/etc. 
+
+                    var area = lineParts[0].Trim(); // The area's for the percent is always before the :, so it will always be at index 0
+                    double gradePercent = Convert.ToDouble(lineParts[1].Trim().Replace("%", "")) / 100; // There is only one grade to the right so we do not need to split any further.  It is also a string because there is a % at the end which is not a number but a character so we need to remove it
+
+                    switch (area.ToLower())
+                    {
+                        case "homework":
+                            newCourse.HomeworkPercentage = gradePercent;
+                            break;
+                        case "quiz":
+                            newCourse.QuizPercentage = gradePercent;
+                            break;
+                        case "participation":
+                            newCourse.ParticipationPercentage = gradePercent;
+                            break;
+                        case "exams":
+                            newCourse.ExamPercentage = gradePercent;
+                            break;
+                        case "final exam":
+                            newCourse.FinalExamPercentage = gradePercent;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+            }
 
             return newCourse;
         }

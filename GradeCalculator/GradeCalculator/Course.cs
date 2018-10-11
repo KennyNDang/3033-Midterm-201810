@@ -22,5 +22,10 @@ namespace GradeCalculator
 
         public double FinalExamPercentage { get; set; }
 
+        public override string ToString()
+        {
+            return $" {this.CourseName} taught by {this.Instructor} has the following weights:\n Homework: { this.HomeworkPercentage}\n Quiz: { this.QuizPercentage}\n Participation: { this.ParticipationPercentage}\n Exam: { this.ExamPercentage}\n Final Exam: { this.FinalExamPercentage}";
+        }
+
     }
 }
