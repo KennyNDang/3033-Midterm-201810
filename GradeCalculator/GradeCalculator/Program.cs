@@ -15,6 +15,8 @@ namespace GradeCalculator
 
             Course mis3033 = ProcessCourseFile(courseLines);
 
+
+
             Console.WriteLine($"{mis3033}");
             Console.ReadKey();
         }
